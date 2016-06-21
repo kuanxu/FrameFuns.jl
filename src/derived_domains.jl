@@ -219,9 +219,9 @@ end
 
 ScaledDomain{N,T}(domain::AbstractDomain{N}, scalefactor::T) = ScaledDomain{typeof(domain),T,N}(domain, scalefactor)
 
-domain(s::ScaledDomain) = d.domain
+domain(s::ScaledDomain) = s.domain
 
-scalefactor(s::ScaledDomain) = d.scalefactor
+scalefactor(s::ScaledDomain) = s.scalefactor
 
 function in(x::Vec, d::ScaledDomain)
     in(x/d.scalefactor, d.domain)
